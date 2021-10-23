@@ -1,0 +1,10 @@
+extends layouts/base.pug
+
+block content
+  section
+    h1.text-xl Post
+    h2.text-4xl.title=category
+    
+    form(action=`/api/${category}` method="post" enctype="multipart/form-data")
+      input.mb-8(type="file" name="image" accept="image/png,image/jpeg,.svg" required)
+      button Upload picture

@@ -1,0 +1,9 @@
+extend layouts/base.pug
+
+block content
+   section
+       h1 Submission Received!
+       div.my-8
+        a(href="javascript:history.back()").button Submit Another
+        a(href="/add").button Submit New
+        a(href="/pictures").button View Collection

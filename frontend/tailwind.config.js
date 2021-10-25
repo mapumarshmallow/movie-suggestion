@@ -7,22 +7,28 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'display': '"Libre Baskerville", serif',
-      'body': '"Libre Franklin", sans-serif',
+      'display': '"Alata", serif',
+      'body': '"Poppins", sans-serif',
     },
     backgroundColor: theme => ({
       ...theme('colors'),
-      'primary': '#FFF2DA',
-      'secondary': '#13A706'
+      'primary': '#121212',
+      'secondary': '#ECE8C6'
+    }),
+    borderColor: theme => ({
+      ...theme('colors'),
+      'primary': '#ECE8C6',
+      'secondary': '#121212',
     }),
     textColor: theme => ({
       ...theme('colors'),
-      'primary': '#13A706',
-      'secondary': '#FFF2DA',
+      'primary': '#ECE8C6',
+      'secondary': '#121212',
     }),
     extend: {
     },
   },
+  separator: '_',
   variants: {
     extend: {},
   },

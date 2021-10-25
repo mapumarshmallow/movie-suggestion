@@ -2,10 +2,9 @@ extends layouts/base.pug
 
 block content
   section
-    h1.title.mb-12 Mobi Collection Fall 2021
+    h1.mb-4 Search movies all in one spot
 
-    p.mb-8 Experience what folks think of Fall for this workshop. We'll be sharing all of this by make API endpoints!
+    p.mb-8 Search for your favorite here using this bar
 
-    div.flex.flex-col
-      a.button.mb-4.max-w-xs(href="/pictures") View collection 
-      a.button(href="/add") Contribute
+    div.search.border-primary.border.my-16
+      input(type="search", name="search", placeholder="Search here").p-4.bg-primary.w-full.relative.z-100.text-sm

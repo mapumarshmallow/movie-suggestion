@@ -16,6 +16,5 @@ module.exports = function (app) {
     optionSuccessStatus: 200,
   }))
 
-  app.use("/add", routes.addPictures);
   app.use("/", routes.api);
 }

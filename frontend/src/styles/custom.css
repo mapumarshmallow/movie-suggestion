@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Libre+Franklin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Poppins&display=swap");
 
 :root {
   @apply font-body;
@@ -10,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-display font-bold capitalize;
+  @apply font-display font-bold uppercase;
 }
 
 h1 {
@@ -18,9 +18,7 @@ h1 {
 }
 
 h2 {
-  min-height: 2.25em;
-
-  @apply text-2xl capitalize;
+  @apply text-2xl;
 }
 
 body {
@@ -45,7 +43,7 @@ footer {
 
 button,
 .button {
-  @apply bg-secondary text-secondary font-display capitalize text-lg text-center block py-2 px-6 max-w-xs;
+  @apply bg-secondary text-secondary font-body capitalize text-lg text-center block py-2 px-6 max-w-xs;
 }
 
 button:first-child ~ button,
@@ -55,4 +53,18 @@ button:first-child ~ button,
 
 .title {
   min-height: 2.25em;
+}
+
+.search {
+  @apply relative;
+}
+
+.search::before {
+  content: " ";
+
+  @apply absolute block w-full h-full -rotate-6 border border-primary;
+}
+
+input[type="search"]::placeholder {
+  @apply text-primary;
 }

@@ -5,5 +5,4 @@ module.exports = function (app) {
   app.set("view engine", "pug");
 
   app.use("/", viewRoutes.home)
-  app.use("/pictures", viewRoutes.getPictures);
 }

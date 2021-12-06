@@ -2,9 +2,10 @@ extends layouts/base.pug
 
 block content
   section
-    h1.mb-4 Search movies all in one spot
+    h1.mb-4 Search things all in one spot
 
     p.mb-8 Search for your favorite here using this bar
 
     div.search.border-primary.border.my-16
-      input(type="search", name="search", placeholder="Search here").p-4.bg-primary.w-full.relative.z-100.text-sm
+      form(method="get", action="/results")
+        input(type="search", name="query", placeholder="Search here").p-4.bg-primary.w-full.relative.z-100.text-sm

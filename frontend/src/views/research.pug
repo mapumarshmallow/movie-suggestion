@@ -1,0 +1,15 @@
+extends layouts/base.pug
+
+block content
+    section
+        h1.mb-4 Research Results
+        p.mb-16 View all of people's searches here and explore their mental models.
+        table.table-auto.border-collapse
+            thead
+                tr.p-4
+                    th.uppercase Search Query
+            tbody
+                each response in responses
+                    tr
+                        td 
+                            a.underline(href=`/research/${response.id}`) #{response.query}

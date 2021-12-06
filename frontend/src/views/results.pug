@@ -1,0 +1,16 @@
+extends layouts/base.pug
+
+block content
+    section
+        h1.mb-4 Results
+        p.mb-16 Select any related pictures to what you searched.
+        div.grid.md_grid-cols-2.gap-1.auto
+            each image in images
+                div
+                    button.m-0.p-0.appearance-none.w-full.h-full.max-w-none.bg-transparent(type="button")
+                            img.object-cover.w-full.h-full.results-image(src=image, draggable="false") 
+    script(src="js/results.js") 
+
+block fixed
+    unless isResearch
+        button.cta.fixed.uppercase#submit Submit

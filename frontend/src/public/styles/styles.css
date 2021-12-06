@@ -609,8 +609,16 @@ video {
   border-color: currentColor;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .relative{
   position: relative;
+}
+
+.m-0{
+  margin: 0px;
 }
 
 .my-16{
@@ -626,6 +634,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.mb-16{
+  margin-bottom: 4rem;
+}
+
 .mt-20{
   margin-top: 5rem;
 }
@@ -634,8 +646,42 @@ video {
   display: block;
 }
 
+.table{
+  display: table;
+}
+
+.grid{
+  display: grid;
+}
+
+.h-full{
+  height: 100%;
+}
+
 .w-full{
   width: 100%;
+}
+
+.max-w-none{
+  max-width: none;
+}
+
+.table-auto{
+  table-layout: auto;
+}
+
+.border-collapse{
+  border-collapse: collapse;
+}
+
+.appearance-none{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.gap-1{
+  gap: 0.25rem;
 }
 
 .border{
@@ -652,8 +698,21 @@ video {
   background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
 }
 
+.bg-transparent{
+  background-color: transparent;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-4{
   padding: 1rem;
+}
+
+.p-0{
+  padding: 0px;
 }
 
 .py-0{
@@ -677,6 +736,10 @@ video {
 .text-primary{
   --tw-text-opacity: 1;
   color: rgba(236, 232, 198, var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration: underline;
 }
 
 :root{
@@ -742,8 +805,39 @@ button, .button{
   color: rgba(18, 18, 18, var(--tw-text-opacity));
 }
 
-button:first-child ~ button, .button:first-child ~ .button{
+button.cta:first-child ~ button.cta, .button.cta:first-child ~ .button.cta{
   margin-top: 1rem;
+}
+
+button.cta.fixed{
+  left: 50%;
+  bottom: 2rem;
+  z-index: 10;
+  width: 100vw;
+  --tw-translate-x: -50%;
+  transform: var(--tw-transform);
+}
+
+table, th, td{
+  border-width: 1px;
+}
+
+th{
+  padding: 1rem;
+}
+
+td{
+  padding: 0.5rem;
+}
+
+.selected{
+  z-index: 0;
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: var(--tw-transform);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .title {
@@ -780,4 +874,10 @@ input[type="search"]:-ms-input-placeholder{
 input[type="search"]::placeholder{
   --tw-text-opacity: 1;
   color: rgba(236, 232, 198, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .md_grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

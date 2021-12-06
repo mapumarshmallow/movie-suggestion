@@ -46,9 +46,31 @@ button,
   @apply bg-secondary text-secondary font-body capitalize text-lg text-center block py-2 px-6 max-w-xs;
 }
 
-button:first-child ~ button,
-.button:first-child ~ .button {
+button.cta:first-child ~ button.cta,
+.button.cta:first-child ~ .button.cta {
   @apply mt-4;
+}
+
+button.cta.fixed {
+  @apply left-1/2 bottom-8 -translate-x-1/2 w-screen z-10;
+}
+
+table,
+th,
+td {
+  @apply border;
+}
+
+th {
+  @apply p-4;
+}
+
+td {
+  @apply p-2;
+}
+
+.selected {
+  @apply scale-95 transition-all z-0;
 }
 
 .title {

@@ -6,6 +6,6 @@ block content
 
     p.mb-8 Search for your favorite here using this bar
 
-    div.search.border-primary.border.my-16
-      form(method="get", action="/results")
-        input(type="search", name="query", placeholder="Search here").p-4.bg-primary.w-full.relative.z-100.text-sm
+    form(method="get", action="/results")
+      input.p-4.bg-primary.w-full.relative.z-100.text-base.border.border-primary.my-8(type="search", name="query", placeholder="Search here")
+      button Submit

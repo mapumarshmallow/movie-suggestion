@@ -43,7 +43,7 @@ footer {
 
 button,
 .button {
-  @apply bg-secondary text-secondary font-body capitalize text-lg text-center block py-2 px-6 max-w-xs;
+  @apply bg-secondary text-secondary font-body capitalize text-lg text-center block py-2 px-6 max-w-xs transition-transform hover_scale-95;
 }
 
 button.cta:first-child ~ button.cta,
@@ -70,7 +70,8 @@ td {
 }
 
 .selected {
-  @apply scale-95 transition-all z-0;
+  filter: brightness(300%);
+  @apply z-0 border-4;
 }
 
 .title {

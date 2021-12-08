@@ -621,9 +621,9 @@ video {
   margin: 0px;
 }
 
-.my-16{
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-4{
@@ -724,9 +724,9 @@ video {
   font-family: "Alata", serif;
 }
 
-.text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .uppercase{
@@ -740,6 +740,12 @@ video {
 
 .underline{
   text-decoration: underline;
+}
+
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 :root{
@@ -803,6 +809,15 @@ button, .button{
   text-transform: capitalize;
   --tw-text-opacity: 1;
   color: rgba(18, 18, 18, var(--tw-text-opacity));
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+button:hover, .button:hover{
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: var(--tw-transform);
 }
 
 button.cta:first-child ~ button.cta, .button.cta:first-child ~ .button.cta{
@@ -830,14 +845,10 @@ td{
   padding: 0.5rem;
 }
 
-.selected{
+.selected {
+  filter: brightness(300%);
   z-index: 0;
-  --tw-scale-x: .95;
-  --tw-scale-y: .95;
-  transform: var(--tw-transform);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  border-width: 4px;
 }
 
 .title {
@@ -874,6 +885,10 @@ input[type="search"]:-ms-input-placeholder{
 input[type="search"]::placeholder{
   --tw-text-opacity: 1;
   color: rgba(236, 232, 198, var(--tw-text-opacity));
+}
+
+.hover_transform-none:hover{
+  transform: none;
 }
 
 @media (min-width: 768px){

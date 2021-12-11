@@ -6,18 +6,19 @@ const fs = require("fs").promises
 // ==================================================  
 //   GET Requests go here
 // ==================================================  
-const UNSPLASH_KEY = "UjzM_zYBSd3fk4QSxEgSY3qsxOACzvqkVzExqctMh2k"
 let currentPayload = {}
 
+// Gets images from unsplash and lists them out for users to select
 router.get("/results", (req, res, next) => {
   currentPayload.query = req.query.query
   let response = {}
-  axios.get(`https://api.unsplash.com/search/photos?client_id=${UNSPLASH_KEY}&query=${req.query.query}`)
+  axios.get(`https://api.unsplash.com/search/photos?client_id=${process.env.UNSPLASH_API_KEY}&query=${req.query.query}`)
     .then(response => {
       images = response.data.results.map(image => image.urls.regular)
       res.status(200).render("results", { images: images })
     })
 
+  // For local debugging
   // fs.readFile("./example_res.json", 'utf8').then((data) => {
   //   response = JSON.parse(data)
   //   images = response.results.map(image => image.urls.regular)
@@ -28,17 +29,15 @@ router.get("/results", (req, res, next) => {
 // ==================================================  
 //   POST Requests go here
 // ==================================================  
-router.post("/api/test", (req, res, next) => {
-  res.status(200).send("hello test")
-})
 
+// Takes the current selected images and uploads them to the datastore
 router.post("/upload", (req, res, next) => {
   currentPayload.results = req.body.results
 
-  console.log(currentPayload)
+  console.log(currentPayload) // For responsive logging / visiblity
 
-  axios.post('https://us-central1-scenic-style-329702.cloudfunctions.net/append-pics-firestore', currentPayload).then(res => {
-    console.log(res.data)
+  axios.post(process.env.GFUNCTION_URL, currentPayload).then(res => {
+    console.log(res.data) // To see the response
   })
 
   res.status(200).redirect("/")

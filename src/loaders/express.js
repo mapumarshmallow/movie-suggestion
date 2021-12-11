@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const routes = require("../routes");
+require('dotenv').config()
 
 module.exports = function (app) {
   app.enable('trust proxy');

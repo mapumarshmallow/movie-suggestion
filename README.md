@@ -44,7 +44,9 @@ You will need your own [Google Cloud](https://cloud.google.com/) workspace as we
 1. Retrieve an [Unsplash API key](https://unsplash.com/developers). It should be free for development.
 2. Rename `default.env` to `.env` in the root directory. In that file, please update with the relevant information.
 
-   > We will allow the usage of our Google Function (our URL), but you can customize it with your own Cloud Function. We will also allow the usage of our DataStore. You will need to update the relevant project ID in `.env`, however. Remember, to authenticate the proper service accounts if you do choose to customize this project.
+   > We will allow the usage of our Google Function (our URL), but you can customize it with your own Cloud Function.
+
+   > To use DataStore, you would need to use one on your personal Cloud Workspace or request a json key from us. There are security limitations with Datastore.
 
    > The Google Cloud function to customize is located in `/functions/main.py`
 
@@ -66,4 +68,9 @@ If you would like to update the customized CSS in the `src/public/styles/styles.
 
 ```
 npm run tailwind:dev
+```
+
+### To Deploy any Updates to AppEngine
+```
+gcloud app deploy .
 ```

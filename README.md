@@ -26,22 +26,22 @@ https://scenic-style-329702.uc.r.appspot.com/research/
 
 We use the following technologies:
 
-- Node.js
-- Express.js
-- Tailwind CSS
-- Axios
-- Google Cloud Functions
-- Google Datastore
-- Google AppEngine
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Google Cloud Functions](https://cloud.google.com/functions)
+- [Google Datastore](https://cloud.google.com/datastore)
+- [Google AppEngine](https://cloud.google.com/appengine)
 
 ## Developing Locally
 
-Make sure Node.js is installed.
-You will need your own Google Cloud workspace as well as your own Unsplash API key because of security requirements.
+Make sure [Node.js](https://nodejs.org/en/) is installed.
+You will need your own [Google Cloud](https://cloud.google.com/) workspace as well as your own [Unsplash API key](https://unsplash.com/developers) because of security requirements.
 
 ### Environment Setup
 
-1. Retrieve an Unsplash API key. It should be free for development.
+1. Retrieve an [Unsplash API key](https://unsplash.com/developers). It should be free for development.
 2. Rename `default.env` to `.env` in the root directory. In that file, please update with the relevant information.
 
    > We will allow the usage of our Google Function (our URL), but you can customize it with your own Cloud Function. We will also allow the usage of our DataStore. You will need to update the relevant project ID in `.env`, however. Remember, to authenticate the proper service accounts if you do choose to customize this project.
